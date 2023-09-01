@@ -1,6 +1,5 @@
 package com.generation.projeto_MaternaCare.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,16 +22,54 @@ public class Produtos {
 	private String nome_produto;
 	
 	@NotBlank(message = "O atributo descrição é Obrigatorio")
-	@Size(min = 5, max = 100, message = "O atributo descrição deve conter no mínimo 05 e no máximo 255 caracteres")
+	@Size(min = 5, max = 255, message = "O atributo descrição deve conter no mínimo 05 e no máximo 255 caracteres")
 	private String descricao;
 	
 	@NotNull(message = "O atributo preço é Obrigatorio")
-	@Column(precision = 10, scale = 2)
 	private float preco;
 	
 	@NotBlank(message = "O atributo foto é Obrigatorio")
-	@Size(min = 5, max = 100, message = "O atributo descrição deve conter no mínimo 05 e no máximo 255 caracteres")
 	private String foto;
 	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome_produto() {
+		return nome_produto;
+	}
+
+	public void setNome_produto(String nome_produto) {
+		this.nome_produto = nome_produto;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public float getPreco() {
+		return preco;
+	}
+
+	public void setPreco(float preco) {
+		this.preco = preco;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 	
 }
