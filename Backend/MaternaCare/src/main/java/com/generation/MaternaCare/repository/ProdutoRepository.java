@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import com.generation.MaternaCare.model.Produto;
 
 public interface ProdutoRepository extends JpaRepository<Produto,Long> {
-	    public List<Produto> findAllByNome_produtoContainingIgnoreCase(@Param("nome_produto") String nome_produto );
-
+	public List<Produto> findAllByNomeProdutoContainingIgnoreCase(String nomeProduto);
 
 }
