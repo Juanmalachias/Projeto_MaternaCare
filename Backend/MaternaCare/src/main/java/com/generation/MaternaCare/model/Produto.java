@@ -1,9 +1,12 @@
 package com.generation.MaternaCare.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -30,6 +33,11 @@ public class Produto {
 	
 	@NotBlank(message = "O atributo foto é Obrigatorio")
 	private String foto;
+	
+	@ManyToOne
+    @JsonIgnoreProperties("produto")
+    private Categoria categoria;
+
 	
 
 	public Long getId() {
@@ -71,5 +79,15 @@ public class Produto {
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
+	
 	
 }
