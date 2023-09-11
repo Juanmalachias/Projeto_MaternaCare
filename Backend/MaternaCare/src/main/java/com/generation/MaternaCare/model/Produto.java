@@ -21,7 +21,7 @@ public class Produto {
 	private Long id;
 	
 	@NotBlank(message = "O atributo nome_produto é Obrigatorio")
-	@Size(min = 5, max = 100, message = "O atributo nome_produto deve conter no mínimo 05 e no máximo 255 caracteres")
+	@Size(min = 5, max = 255, message = "O atributo nome_produto deve conter no mínimo 05 e no máximo 255 caracteres")
 	private String nomeProduto;
 	
 	@NotBlank(message = "O atributo descrição é Obrigatorio")
@@ -37,6 +37,10 @@ public class Produto {
 	@ManyToOne
     @JsonIgnoreProperties("produto")
     private Categoria categoria;
+	
+	@ManyToOne
+    @JsonIgnoreProperties("produto")
+    private Usuario usuario;
 
 	
 
