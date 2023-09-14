@@ -26,11 +26,11 @@ public class Usuario {
 	
 	@NotBlank(message = "O atributo nomeUsuario é Obrigatorio")
 	@Size(min = 3, max = 255, message = "O atributo nomeUsuario deve conter no mínimo 03 e no máximo 255 caracteres")
-	private String nomeUsuario;
+	private String nome;
 	
 	@NotBlank(message = "O atributo Email é Obrigatorio")
 	@Size(min = 5, max = 100, message = "O atributo Email deve conter no mínimo 05 e no máximo 100 caracteres")
-	private String email;
+	private String usuario;
 	
 	@NotNull(message = "O atributo senha é Obrigatorio")
 	private String senha;
@@ -50,20 +50,20 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getNomeUsuario() {
-		return nomeUsuario;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeUsuario(String nomeUsuario) {
-		this.nomeUsuario = nomeUsuario;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {
@@ -82,5 +82,12 @@ public class Usuario {
 		this.foto = foto;
 	}
 
+	public List<Produto> getProduto() {
+		return produto;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produto = produto;
+	}
 	
 }
