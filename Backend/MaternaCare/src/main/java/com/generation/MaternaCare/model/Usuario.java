@@ -2,8 +2,10 @@ package com.generation.MaternaCare.model;
 
 import java.util.List;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,6 +30,7 @@ public class Usuario {
 	@Size(min = 3, max = 255, message = "O atributo nomeUsuario deve conter no mínimo 03 e no máximo 255 caracteres")
 	private String nome;
 	
+	@Schema(example = "email@email.com.br")
 	@NotBlank(message = "O atributo Email é Obrigatorio")
 	@Size(min = 5, max = 100, message = "O atributo Email deve conter no mínimo 05 e no máximo 100 caracteres")
 	private String usuario;
@@ -41,6 +44,8 @@ public class Usuario {
 	@OneToMany (fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("usuario")
 	    private List<Produto> produto;
+	
+	
 
 	public Long getId() {
 		return id;
